@@ -1,0 +1,11 @@
+{"level":"error","message":"Unhandled error","timestamp":"2025-07-22T17:17:30.723Z"}
+{"error":{"clientVersion":"6.12.0","name":"PrismaClientValidationError"},"level":"error","message":"Prisma error occurred","timestamp":"2025-07-22T17:22:47.313Z"}
+{"error":{"clientVersion":"6.12.0","name":"PrismaClientValidationError"},"level":"error","message":"Prisma error occurred","timestamp":"2025-07-23T15:53:56.337Z"}
+{"error":{},"level":"error","message":"Prisma error occurred","timestamp":"2025-07-23T16:11:14.355Z"}
+{"error":{},"level":"error","message":"Prisma error occurred","timestamp":"2025-07-23T16:16:01.514Z"}
+{"level":"error","message":"Unhandled error","timestamp":"2025-07-23T17:08:04.281Z"}
+{"level":"error","message":"Unhandled error","timestamp":"2025-07-23T17:09:50.265Z"}
+{"error":{},"level":"error","message":" Failed to generate token","timestamp":"2025-07-23T17:10:37.042Z"}
+{"error":{},"level":"error","message":" Failed to generate token","timestamp":"2025-07-23T17:10:44.402Z"}
+{"error":{},"level":"error","message":" Failed to generate token","timestamp":"2025-07-23T17:10:49.383Z"}
+{"emailId":"deepik@gmail.com","level":"error","message":"Invalid Credentials","timestamp":"2025-07-23T17:11:17.372Z"}
