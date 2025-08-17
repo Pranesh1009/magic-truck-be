@@ -9,6 +9,7 @@ import roleRoutes from './routes/role.routes';
 import businessTypesRoutes from './routes/businessTypes.routes';
 import businessDealersRoutes from './routes/businessDealers.routes';
 import shipmentRoutes from './routes/shipment.routes'
+import { authenticateToken } from './middlewares/auth.middleware';
 
 // Dot environment gets the required variable from .env file
 dotenv.config();
@@ -72,7 +73,7 @@ app.get('/api/health', async (req: Request, res: Response) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
-app.use('/api/role', roleRoutes);
+app.use('/api/role', authenticateToken, roleRoutes);
 app.use('/api/business-types', businessTypesRoutes);
 app.use('/api/business-dealers', businessDealersRoutes);
 app.use('/api/shipments', shipmentRoutes);

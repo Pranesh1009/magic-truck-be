@@ -75,7 +75,7 @@ export const createShipment = async (req: Request, res: Response) => {
         pickupTime: validatedData.pickupTime || null,
         dropTime: validatedData.dropTime || null,
         truckOption: validatedData.truckOption || null,
-        userId: req.user.id,
+        userId: req.user?.id || '',
       },
     });
 
