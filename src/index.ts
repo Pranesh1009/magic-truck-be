@@ -8,7 +8,8 @@ import authRoutes from './routes/auth.routes';
 import roleRoutes from './routes/role.routes';
 import businessTypesRoutes from './routes/businessTypes.routes';
 import businessDealersRoutes from './routes/businessDealers.routes';
-import shipmentRoutes from './routes/shipment.routes'
+import shipmentRoutes from './routes/shipment.routes';
+import fileUploadRoutes from './routes/fileUpload.routes';
 import { authenticateToken } from './middlewares/auth.middleware';
 
 // Dot environment gets the required variable from .env file
@@ -77,6 +78,7 @@ app.use('/api/role', authenticateToken, roleRoutes);
 app.use('/api/business-types', businessTypesRoutes);
 app.use('/api/business-dealers', businessDealersRoutes);
 app.use('/api/shipments', shipmentRoutes);
+app.use('/api/upload', fileUploadRoutes);
 
 // Error handling
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

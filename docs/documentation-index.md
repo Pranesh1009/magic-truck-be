@@ -6,14 +6,16 @@ This document provides an overview of all available documentation for the MagicT
 
 ### Core Documentation
 
-| Document                                       | Description                     | Purpose                                  |
-| ---------------------------------------------- | ------------------------------- | ---------------------------------------- |
-| [README.md](./README.md)                       | Main documentation entry point  | Overview, features, and quick start      |
-| [api-reference.md](./api-reference.md)         | Complete API documentation      | All endpoints, request/response examples |
-| [setup-guide.md](./setup-guide.md)             | Installation and configuration  | Step-by-step setup instructions          |
-| [cost-calculation.md](./cost-calculation.md)   | Pricing structure and formulas  | Detailed cost calculation breakdown      |
-| [error-handling.md](./error-handling.md)       | Error codes and troubleshooting | Error scenarios and solutions            |
-| [google-maps-setup.md](./google-maps-setup.md) | Google Maps integration guide   | Setup and configuration for maps APIs    |
+| Document                                                       | Description                     | Purpose                                  |
+| -------------------------------------------------------------- | ------------------------------- | ---------------------------------------- |
+| [README.md](./README.md)                                       | Main documentation entry point  | Overview, features, and quick start      |
+| [api-reference.md](./api-reference.md)                         | Complete API documentation      | All endpoints, request/response examples |
+| [setup-guide.md](./setup-guide.md)                             | Installation and configuration  | Step-by-step setup instructions          |
+| [cost-calculation.md](./cost-calculation.md)                   | Pricing structure and formulas  | Detailed cost calculation breakdown      |
+| [error-handling.md](./error-handling.md)                       | Error codes and troubleshooting | Error scenarios and solutions            |
+| [google-maps-setup.md](./google-maps-setup.md)                 | Google Maps integration guide   | Setup and configuration for maps APIs    |
+| [file-upload-api.md](./file-upload-api.md)                     | File upload API documentation   | Complete file upload endpoints guide     |
+| [digitalocean-spaces-setup.md](./digitalocean-spaces-setup.md) | DigitalOcean Spaces setup       | Configuration guide for file storage     |
 
 ### Developer Resources
 
@@ -25,9 +27,10 @@ This document provides an overview of all available documentation for the MagicT
 
 ### Additional Files
 
-| File                                           | Description           | Purpose                      |
-| ---------------------------------------------- | --------------------- | ---------------------------- |
-| [test-shipment-api.js](./test-shipment-api.js) | Automated test script | Ready-to-run API test script |
+| File                                              | Description             | Purpose                        |
+| ------------------------------------------------- | ----------------------- | ------------------------------ |
+| [test-shipment-api.js](./test-shipment-api.js)    | Automated test script   | Ready-to-run API test script   |
+| [test-file-upload.js](../src/test-file-upload.js) | File upload test script | Test file upload functionality |
 
 ## 🚀 Quick Navigation
 
@@ -36,12 +39,14 @@ This document provides an overview of all available documentation for the MagicT
 1. Start with [README.md](./README.md) for overview
 2. Follow [setup-guide.md](./setup-guide.md) for installation
 3. Use [quick-start.md](./quick-start.md) for first API calls
+4. Configure [digitalocean-spaces-setup.md](./digitalocean-spaces-setup.md) for file uploads
 
 ### For Developers
 
 1. Reference [api-reference.md](./api-reference.md) for endpoint details
 2. Use [curl-examples.md](./curl-examples.md) for testing
 3. Follow [testing-guide.md](./testing-guide.md) for comprehensive testing
+4. Test file uploads with [test-file-upload.js](../src/test-file-upload.js)
 
 ### For Troubleshooting
 
@@ -129,6 +134,8 @@ This document provides an overview of all available documentation for the MagicT
 - ✅ cURL Examples: Complete
 - ✅ Quick Start: Complete
 - ✅ Google Maps Setup: Complete
+- ✅ File Upload API: Complete
+- ✅ DigitalOcean Spaces Setup: Complete
 
 ### Quality Checklist
 
@@ -156,5 +163,5 @@ This document provides an overview of all available documentation for the MagicT
 ---
 
 **Last Updated**: August 2024  
-**Documentation Version**: 1.0.0  
-**Total Files**: 9 documentation files + 2 test scripts
+**Documentation Version**: 1.1.0  
+**Total Files**: 11 documentation files + 3 test scripts
