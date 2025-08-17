@@ -1,10 +1,14 @@
-import express, {Request, Response, NextFunction} from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
 import { PrismaClient } from '@prisma/client';
 import logger from './utils/logger';
 import authRoutes from './routes/auth.routes';
+import roleRoutes from './routes/role.routes';
+import businessTypesRoutes from './routes/businessTypes.routes';
+import businessDealersRoutes from './routes/businessDealers.routes';
+import shipmentRoutes from './routes/shipment.routes'
 
 // Dot environment gets the required variable from .env file
 dotenv.config();
@@ -29,7 +33,7 @@ app.use(helmet());
 app.use(express.json());
 
 // Logs each incoming API METHOD, URL, IP-ADDRESS
-app.use((req: Request, res: Response, next:NextFunction) => {
+app.use((req: Request, res: Response, next: NextFunction) => {
     logger.info(`${req.method} ${req.url}`, {
         method: req.method,
         url: req.url,
@@ -39,8 +43,8 @@ app.use((req: Request, res: Response, next:NextFunction) => {
 });
 
 // Health check endpoint
-app.get('/health', async (req: Request, res: Response) => {
-    try{
+app.get('/api/health', async (req: Request, res: Response) => {
+    try {
         // Check database connection
         const result = await prisma.$queryRaw`SELECT 1`;
         logger.info('Health check success');
@@ -52,7 +56,7 @@ app.get('/health', async (req: Request, res: Response) => {
                 server: 'running'
             }
         });
-    } catch ( error ){
+    } catch (error) {
         logger.error('Health check failed', { error });
         res.status(503).json({
             status: 'unhealthy',
@@ -67,12 +71,16 @@ app.get('/health', async (req: Request, res: Response) => {
 });
 
 // Routes
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/role', roleRoutes);
+app.use('/api/business-types', businessTypesRoutes);
+app.use('/api/business-dealers', businessDealersRoutes);
+app.use('/api/shipments', shipmentRoutes);
 
 // Error handling
-app.use((err: Error, req: Request, res: Response) => {
-    logger.error('Unhandled error', { error: err.stack});
-    res.status(500).json( { message: 'Something went wrong!' });
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+    logger.error('Unhandled error', { error: err.stack });
+    res.status(500).json({ message: 'Something went wrong!' });
 });
 
 const PORT = process.env.PORT || 3000;

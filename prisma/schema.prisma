@@ -8,24 +8,123 @@ datasource db {
 }
 
 model Customer {
-  id             String      @id @default(uuid())
-  name           String
-  emailId        String      @unique
-  aadharNumber   String      @unique
-  password       String
-  phoneNumber    String      @unique
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+  id           String   @id @default(uuid())
+  name         String
+  emailId      String   @unique
+  aadharNumber String   @unique
+  password     String
+  phoneNumber  String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
-model truckOwner{
-  id             String      @id @default(uuid())
-  name           String
-  emailId        String      @unique
-  aadharNumber   String      @unique
-  password       String
-  phoneNumber    String      @unique
-  GSTIN          String      @unique
-  createdAt      DateTime    @default(now())
-  updatedAt      DateTime    @updatedAt
+model truckOwner {
+  id           String   @id @default(uuid())
+  name         String
+  emailId      String   @unique
+  aadharNumber String   @unique
+  password     String
+  phoneNumber  String   @unique
+  GSTIN        String   @unique
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Role {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  Users Users[]
+
+  @@index([id])
+}
+
+model Users {
+  id          String   @id @default(uuid())
+  name        String
+  email       String   @unique
+  password    String
+  phoneNumber String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  role   Role   @relation(fields: [roleId], references: [id])
+  roleId String
+
+  @@index([id])
+  @@index([roleId])
+}
+
+model BusinessTypes {
+  id          String   @id @default(uuid())
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  BusinessDealers BusinessDealers[]
+
+  @@index([id])
+  @@map("business_types")
+}
+
+model BusinessDealers {
+  id           String   @id @default(uuid())
+  name         String
+  email        String   @unique
+  phoneNumber  String   @unique
+  gst          String
+  gst_doc      String
+  other_doc    String[] @default([])
+  identity_doc String[] @default([])
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  businessType   BusinessTypes @relation(fields: [businessTypeId], references: [id])
+  businessTypeId String
+
+  @@index([id])
+  @@index([businessTypeId])
+  @@map("business_dealers")
+}
+
+model ShipmentDetails {
+  id String @id @default(uuid())
+
+  vehicleType String
+
+  pickupAddress       String
+  pickupLocation      String[] @default([])
+  dropAddress         String
+  dropLocation        String[] @default([])
+  commodity           String
+  weight              String
+  specialInstructions String
+
+  pickupContactName   String
+  pickupContactNumber String
+  dropContactName     String
+  dropContactNumber   String
+
+  addOns String[] @default([])
+
+  pickupDate DateTime?
+  dropDate   DateTime?
+  pickupTime String?
+  dropTime   String?
+
+  truckOption String?
+
+  userId String
+
+  // status String @default("draft")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([id])
+  @@map("shipment_details")
 }

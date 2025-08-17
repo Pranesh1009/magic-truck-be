@@ -1,0 +1,203 @@
+# Business Dealer API - Raw cURL Commands
+# Copy and paste these commands directly into your terminal
+
+# Configuration
+BASE_URL="http://localhost:3000/api"
+
+# 1. HEALTH CHECK
+curl -X GET "${BASE_URL}/health"
+
+# 2. BUSINESS TYPES
+# Create Business Type
+curl -X POST "${BASE_URL}/business-types" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Transportation",
+    "description": "Transportation and logistics business"
+  }'
+
+# Get All Business Types
+curl -X GET "${BASE_URL}/business-types?page=1&limit=10"
+
+# Get Business Type by ID (replace BUSINESS_TYPE_ID)
+curl -X GET "${BASE_URL}/business-types/BUSINESS_TYPE_ID"
+
+# 3. ROLES
+# Create Dealer Role
+curl -X POST "${BASE_URL}/role" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "dealer",
+    "description": "Business dealer role with access to dealer-specific features"
+  }'
+
+# Get All Roles
+curl -X GET "${BASE_URL}/role"
+
+# 4. BUSINESS DEALER ONBOARDING
+# Create Business Dealer (Full Data)
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "+1234567890",
+    "password": "securePassword123",
+    "gst": "GST123456789",
+    "gst_doc": "https://example.com/documents/gst_certificate.pdf",
+    "other_doc": [
+      "https://example.com/documents/business_license.pdf",
+      "https://example.com/documents/tax_certificate.pdf"
+    ],
+    "identity_doc": [
+      "https://example.com/documents/aadhar_card.pdf",
+      "https://example.com/documents/pan_card.pdf"
+    ],
+    "businessTypeId": "BUSINESS_TYPE_ID"
+  }'
+
+# Create Business Dealer (Minimal Data)
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "phoneNumber": "+1987654321",
+    "password": "password123",
+    "gst": "GST987654321",
+    "businessTypeId": "BUSINESS_TYPE_ID"
+  }'
+
+# 5. BUSINESS DEALER MANAGEMENT
+# Get All Business Dealers
+curl -X GET "${BASE_URL}/business-dealers?page=1&limit=10"
+
+# Get Business Dealer by ID (replace BUSINESS_DEALER_ID)
+curl -X GET "${BASE_URL}/business-dealers/BUSINESS_DEALER_ID"
+
+# Update Business Dealer (Full)
+curl -X PUT "${BASE_URL}/business-dealers/BUSINESS_DEALER_ID" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe Updated",
+    "email": "john.updated@example.com",
+    "phoneNumber": "+1234567890",
+    "gst": "GST123456789",
+    "gst_doc": "https://example.com/documents/updated_gst_certificate.pdf",
+    "other_doc": [
+      "https://example.com/documents/updated_business_license.pdf",
+      "https://example.com/documents/updated_tax_certificate.pdf"
+    ],
+    "identity_doc": [
+      "https://example.com/documents/updated_aadhar_card.pdf",
+      "https://example.com/documents/updated_pan_card.pdf"
+    ],
+    "businessTypeId": "BUSINESS_TYPE_ID"
+  }'
+
+# Update Business Dealer (Partial)
+curl -X PUT "${BASE_URL}/business-dealers/BUSINESS_DEALER_ID" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe Updated Name Only",
+    "gst_doc": "https://example.com/documents/new_gst_certificate.pdf"
+  }'
+
+# Delete Business Dealer (replace BUSINESS_DEALER_ID)
+curl -X DELETE "${BASE_URL}/business-dealers/BUSINESS_DEALER_ID"
+
+# 6. AUTHENTICATION
+# Register User
+curl -X POST "${BASE_URL}/auth/register" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Test User",
+    "email": "test.user@example.com",
+    "phoneNumber": "+1111111111",
+    "password": "password123",
+    "roleId": "dealer-role-id"
+  }'
+
+# Login User
+curl -X POST "${BASE_URL}/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john.doe@example.com",
+    "password": "securePassword123"
+  }'
+
+# 7. ERROR TESTING
+# Test Missing Required Fields
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john.doe@example.com"
+  }'
+
+# Test Duplicate Email
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "+1234567890",
+    "password": "securePassword123",
+    "gst": "GST123456789",
+    "businessTypeId": "BUSINESS_TYPE_ID"
+  }'
+
+# Test Invalid Business Type ID
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "+1234567890",
+    "password": "securePassword123",
+    "gst": "GST123456789",
+    "businessTypeId": "invalid-uuid"
+  }'
+
+# 8. COMPLETE TESTING WORKFLOW
+# Step 1: Health Check
+curl -X GET "${BASE_URL}/health"
+
+# Step 2: Create Business Type
+curl -X POST "${BASE_URL}/business-types" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "Transportation",
+    "description": "Transportation and logistics business"
+  }'
+
+# Step 3: Get Business Type ID (copy the ID from response)
+curl -X GET "${BASE_URL}/business-types"
+
+# Step 4: Create Business Dealer (replace BUSINESS_TYPE_ID with actual ID)
+curl -X POST "${BASE_URL}/business-dealers" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "phoneNumber": "+1234567890",
+    "password": "securePassword123",
+    "gst": "GST123456789",
+    "businessTypeId": "BUSINESS_TYPE_ID"
+  }'
+
+# Step 5: Verify Business Dealer Creation
+curl -X GET "${BASE_URL}/business-dealers"
+
+# Step 6: Test Login
+curl -X POST "${BASE_URL}/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "john.doe@example.com",
+    "password": "securePassword123"
+  }'
+
+# Environment Variables Setup
+export BASE_URL="http://localhost:3000/api"
+export BUSINESS_TYPE_ID="your-business-type-id"
+export BUSINESS_DEALER_ID="your-business-dealer-id"

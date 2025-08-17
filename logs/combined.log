@@ -535,3 +535,54 @@
 {"emailId":"deepika@gmail.com","level":"warn","message":"Login attempt with invalid password","timestamp":"2025-07-23T17:11:25.048Z"}
 {"ip":"::1","level":"info","message":"POST /auth/login","method":"POST","timestamp":"2025-07-23T17:11:35.139Z","url":"/auth/login"}
 {"level":"info","message":"Logged In successfully","timestamp":"2025-07-23T17:11:35.224Z","userId":"ef757c5a-70ec-41f8-a81e-fc02629f330a"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T06:54:33.757Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T06:54:36.634Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /api/health","method":"GET","timestamp":"2025-08-16T06:58:22.591Z","url":"/api/health"}
+{"level":"error","message":"Unhandled error","timestamp":"2025-08-16T06:58:22.596Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T06:59:24.424Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T06:59:24.510Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T06:59:29.316Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T06:59:29.414Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:00:07.325Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:00:07.586Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /api/health","method":"GET","timestamp":"2025-08-16T07:00:11.959Z","url":"/api/health"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:00:45.702Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:00:46.160Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /api/health","method":"GET","timestamp":"2025-08-16T07:00:55.747Z","url":"/api/health"}
+{"level":"info","message":"Health check success","timestamp":"2025-08-16T07:00:55.802Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"POST /api/role/create","method":"POST","timestamp":"2025-08-16T07:02:30.323Z","url":"/api/role/create"}
+{"level":"info","message":"Role created successfully","name":"truck","roleId":"e8021272-dcf0-4c45-9692-a89f7dcc2195","timestamp":"2025-08-16T07:02:30.486Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"POST /api/role/create","method":"POST","timestamp":"2025-08-16T07:02:48.169Z","url":"/api/role/create"}
+{"level":"info","message":"Role created successfully","name":"dealer","roleId":"fa9d9dfa-fdd0-457c-90ac-2b4845843a00","timestamp":"2025-08-16T07:02:48.206Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:20:45.318Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:20:45.500Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:21:10.476Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:21:10.556Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:21:51.310Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:21:51.385Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:21:55.772Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:21:55.847Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T07:22:12.091Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T07:22:12.205Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T08:13:08.697Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T08:13:11.927Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T08:16:52.728Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T08:16:52.828Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T08:17:41.160Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T08:17:41.233Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T08:17:47.111Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T08:17:47.301Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /api/health","method":"GET","timestamp":"2025-08-16T08:50:27.506Z","url":"/api/health"}
+{"level":"info","message":"Health check success","timestamp":"2025-08-16T08:50:27.610Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T19:07:01.563Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T19:07:01.922Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T19:07:08.293Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T19:07:08.460Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T19:07:14.449Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T19:07:14.542Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T19:07:50.633Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T19:07:50.734Z"}
+{"level":"info","message":"Server is running on port 8000","timestamp":"2025-08-16T19:07:57.634Z"}
+{"level":"info","message":"Database Connection established successfully","timestamp":"2025-08-16T19:07:57.724Z"}
+{"ip":"::ffff:127.0.0.1","level":"info","message":"GET /api/health","method":"GET","timestamp":"2025-08-16T19:08:04.835Z","url":"/api/health"}
+{"level":"info","message":"Health check success","timestamp":"2025-08-16T19:08:04.992Z"}

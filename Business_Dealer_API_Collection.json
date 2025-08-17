@@ -1,0 +1,908 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-01-01T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_root",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/health",
+      "name": "Health Check",
+      "description": "Check if the API is running",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_business_type",
+      "parentId": "fld_business_types",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-types",
+      "name": "Create Business Type",
+      "description": "Create a new business type",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Transportation\",\n  \"description\": \"Transportation and logistics business\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_business_types",
+      "parentId": "fld_business_types",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-types",
+      "name": "Get All Business Types",
+      "description": "Get all business types with pagination",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Page number"
+        },
+        {
+          "name": "limit",
+          "value": "10",
+          "description": "Number of items per page"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_business_type_by_id",
+      "parentId": "fld_business_types",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-types/{{ _.business_type_id }}",
+      "name": "Get Business Type by ID",
+      "description": "Get a specific business type by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200002,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_role",
+      "parentId": "fld_roles",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/role",
+      "name": "Create Dealer Role",
+      "description": "Create a new dealer role",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"dealer\",\n  \"description\": \"Business dealer role with access to dealer-specific features\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_roles",
+      "parentId": "fld_roles",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/role",
+      "name": "Get All Roles",
+      "description": "Get all available roles",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_business_dealer_full",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Create Business Dealer (Full Data)",
+      "description": "Create a business dealer with all required and optional fields",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"password\": \"securePassword123\",\n  \"gst\": \"GST123456789\",\n  \"gst_doc\": \"https://example.com/documents/gst_certificate.pdf\",\n  \"other_doc\": [\n    \"https://example.com/documents/business_license.pdf\",\n    \"https://example.com/documents/tax_certificate.pdf\"\n  ],\n  \"identity_doc\": [\n    \"https://example.com/documents/aadhar_card.pdf\",\n    \"https://example.com/documents/pan_card.pdf\"\n  ],\n  \"businessTypeId\": \"{{ _.business_type_id }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_business_dealer_minimal",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Create Business Dealer (Minimal Data)",
+      "description": "Create a business dealer with only required fields",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Jane Smith\",\n  \"email\": \"jane.smith@example.com\",\n  \"phoneNumber\": \"+1987654321\",\n  \"password\": \"password123\",\n  \"gst\": \"GST987654321\",\n  \"businessTypeId\": \"{{ _.business_type_id }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_business_dealers",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Get All Business Dealers",
+      "description": "Get all business dealers with pagination",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Page number"
+        },
+        {
+          "name": "limit",
+          "value": "10",
+          "description": "Number of items per page"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200002,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_business_dealer_by_id",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers/{{ _.business_dealer_id }}",
+      "name": "Get Business Dealer by ID",
+      "description": "Get a specific business dealer by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200003,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_business_dealer_full",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers/{{ _.business_dealer_id }}",
+      "name": "Update Business Dealer (Full)",
+      "description": "Update a business dealer with all fields",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe Updated\",\n  \"email\": \"john.updated@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"gst\": \"GST123456789\",\n  \"gst_doc\": \"https://example.com/documents/updated_gst_certificate.pdf\",\n  \"other_doc\": [\n    \"https://example.com/documents/updated_business_license.pdf\",\n    \"https://example.com/documents/updated_tax_certificate.pdf\"\n  ],\n  \"identity_doc\": [\n    \"https://example.com/documents/updated_aadhar_card.pdf\",\n    \"https://example.com/documents/updated_pan_card.pdf\"\n  ],\n  \"businessTypeId\": \"{{ _.business_type_id }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200004,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_business_dealer_partial",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers/{{ _.business_dealer_id }}",
+      "name": "Update Business Dealer (Partial)",
+      "description": "Update a business dealer with only specific fields",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe Updated Name Only\",\n  \"gst_doc\": \"https://example.com/documents/new_gst_certificate.pdf\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200005,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_business_dealer",
+      "parentId": "fld_business_dealers",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers/{{ _.business_dealer_id }}",
+      "name": "Delete Business Dealer",
+      "description": "Delete a business dealer by ID",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200006,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_register_user",
+      "parentId": "fld_authentication",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/auth/register",
+      "name": "Register User",
+      "description": "Register a new user",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"Test User\",\n  \"email\": \"test.user@example.com\",\n  \"phoneNumber\": \"+1111111111\",\n  \"password\": \"password123\",\n  \"roleId\": \"dealer-role-id\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_login_user",
+      "parentId": "fld_authentication",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/auth/login",
+      "name": "Login User",
+      "description": "Login with email and password",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"securePassword123\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_calculate_shipment_cost",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/calculate-cost",
+      "name": "Calculate Shipment Cost",
+      "description": "Calculate shipment cost without creating shipment",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pickupAddress\": \"Mumbai, Maharashtra, India\",\n  \"dropAddress\": \"Delhi, India\",\n  \"vehicleType\": \"truck\",\n  \"weight\": 5000,\n  \"commodity\": \"Electronics\",\n  \"addOns\": [\"express_delivery\", \"insurance\"]\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_shipment",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments",
+      "name": "Create Shipment",
+      "description": "Create a new shipment with automatic cost calculation",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"vehicleType\": \"truck\",\n  \"pickupAddress\": \"Mumbai, Maharashtra, India\",\n  \"dropAddress\": \"Delhi, India\",\n  \"commodity\": \"Electronics\",\n  \"weight\": \"5000\",\n  \"specialInstructions\": \"Handle with care\",\n  \"pickupContactName\": \"John Doe\",\n  \"pickupContactNumber\": \"+91-9876543210\",\n  \"dropContactName\": \"Jane Smith\",\n  \"dropContactNumber\": \"+91-9876543211\",\n  \"addOns\": [\"express_delivery\", \"insurance\"],\n  \"pickupDate\": \"2024-01-15\",\n  \"dropDate\": \"2024-01-16\",\n  \"pickupTime\": \"09:00\",\n  \"dropTime\": \"18:00\",\n  \"truckOption\": \"refrigerated\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_shipments",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments",
+      "name": "Get All Shipments",
+      "description": "Get all shipments with pagination",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "page",
+          "value": "1",
+          "description": "Page number"
+        },
+        {
+          "name": "limit",
+          "value": "10",
+          "description": "Number of items per page"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200002,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_shipment_by_id",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/{{ _.shipment_id }}",
+      "name": "Get Shipment by ID",
+      "description": "Get a specific shipment by ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200003,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_shipment",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/{{ _.shipment_id }}",
+      "name": "Update Shipment",
+      "description": "Update a shipment with new data",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"vehicleType\": \"mini_truck\",\n  \"specialInstructions\": \"Updated instructions\",\n  \"addOns\": [\"express_delivery\", \"fragile_handling\"],\n  \"pickupTime\": \"10:00\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200004,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_shipment",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/{{ _.shipment_id }}",
+      "name": "Delete Shipment",
+      "description": "Delete a shipment by ID",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200005,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_distance_duration",
+      "parentId": "fld_shipments",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/distance-duration",
+      "name": "Get Distance and Duration",
+      "description": "Calculate distance and duration between two locations",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "pickupAddress",
+          "value": "Mumbai",
+          "description": "Pickup location address"
+        },
+        {
+          "name": "dropAddress",
+          "value": "Delhi",
+          "description": "Delivery location address"
+        }
+      ],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1704067200006,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_missing_fields",
+      "parentId": "fld_error_testing",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Test Missing Required Fields",
+      "description": "Test API response when required fields are missing",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_duplicate_email",
+      "parentId": "fld_error_testing",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Test Duplicate Email",
+      "description": "Test API response when trying to create dealer with existing email",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"password\": \"securePassword123\",\n  \"gst\": \"GST123456789\",\n  \"businessTypeId\": \"{{ _.business_type_id }}\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200001,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_invalid_business_type",
+      "parentId": "fld_error_testing",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/business-dealers",
+      "name": "Test Invalid Business Type ID",
+      "description": "Test API response when using invalid business type ID",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"password\": \"securePassword123\",\n  \"gst\": \"GST123456789\",\n  \"businessTypeId\": \"invalid-uuid\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200002,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_shipment_missing_fields",
+      "parentId": "fld_error_testing",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments",
+      "name": "Test Shipment Missing Required Fields",
+      "description": "Test API response when required shipment fields are missing",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"vehicleType\": \"truck\",\n  \"pickupAddress\": \"Mumbai, Maharashtra, India\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200003,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_invalid_vehicle_type",
+      "parentId": "fld_error_testing",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "url": "{{ _.base_url }}/shipments/calculate-cost",
+      "name": "Test Invalid Vehicle Type",
+      "description": "Test API response when using invalid vehicle type",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"pickupAddress\": \"Mumbai, Maharashtra, India\",\n  \"dropAddress\": \"Delhi, India\",\n  \"vehicleType\": \"invalid_vehicle\",\n  \"weight\": 5000\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1704067200004,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "wrk_business_dealer_api",
+      "parentId": null,
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Business Dealer API",
+      "description": "API collection for Business Dealer Onboarding system and Shipment Management",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "fld_business_types",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Business Types",
+      "description": "Business type management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_roles",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Roles",
+      "description": "Role management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200001,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_business_dealers",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Business Dealers",
+      "description": "Business dealer management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200002,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_shipments",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Shipments",
+      "description": "Shipment management endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200003,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_authentication",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Authentication",
+      "description": "Authentication endpoints",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200004,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_error_testing",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Error Testing",
+      "description": "Error testing scenarios",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1704067200005,
+      "_type": "request_group"
+    },
+    {
+      "_id": "env_base",
+      "parentId": "wrk_business_dealer_api",
+      "modified": 1704067200000,
+      "created": 1704067200000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3000/api",
+        "business_type_id": "",
+        "business_dealer_id": "",
+        "shipment_id": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "business_type_id",
+          "business_dealer_id",
+          "shipment_id"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1704067200000,
+      "_type": "environment"
+    }
+  ]
+}
